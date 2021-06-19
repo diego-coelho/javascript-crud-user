@@ -5,6 +5,8 @@
     "removeComments": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
+    "moduleResolution": "node",
+    "noImplicitAny": true,
     "allowSyntheticDefaultImports": true,
     "target": "es2017",
     "sourceMap": true,
