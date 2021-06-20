@@ -1,0 +1,25 @@
+<mat-card class="example-card">
+    <mat-card-header>
+        <mat-card-title>User Type</mat-card-title>
+        <span class="example-spacer"></span>
+    </mat-card-header>
+
+    <form class="example-form" [formGroup]="userTypeFormGroup" (ngSubmit)="onSubmit()">
+
+        <mat-form-field class="example-full-width">
+            <mat-label>Description</mat-label>
+            <input type="text" matInput formControlName="description">
+        </mat-form-field>
+
+        <section>
+            <mat-slide-toggle formControlName="active">Active</mat-slide-toggle>
+        </section>
+
+
+        <section>
+            <div class="example-button-row">
+                <button mat-raised-button color="primary" type="submit">Save</button>
+            </div>
+        </section>
+    </form>
+</mat-card>

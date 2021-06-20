@@ -26,8 +26,8 @@ export class User {
     @IsNotEmpty()
     email: String;      // required
 
-    @OneToMany(() => UserType, user_type => user_type.users)
-    @JoinColumn({ name: 'user_type_id' })
+    @JoinColumn({ name: "user_type_id", referencedColumnName: 'id' })
+    @ManyToOne(() => UserType, userType => userType.users)
     user_type: UserType;  // required (relation)
 
     @Column()

@@ -1,0 +1,48 @@
+<mat-card class="example-card">
+    <mat-card-header>
+        <mat-card-title>User</mat-card-title>
+        <span class="example-spacer"></span>
+    </mat-card-header>
+
+    <form class="example-form" [formGroup]="userFormGroup" (ngSubmit)="onSubmit()">
+
+        <mat-form-field class="example-full-width">
+            <mat-label>Nickname</mat-label>
+            <input type="text" matInput formControlName="nickname">
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+            <mat-label>Name</mat-label>
+            <input type="text" matInput formControlName="name">
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+            <mat-label>Phone</mat-label>
+            <input type="text" matInput formControlName="phone">
+        </mat-form-field>
+
+
+        <mat-form-field class="example-full-width">
+            <mat-label>Email</mat-label>
+            <input type="email" matInput formControlName="email">
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label>User Type</mat-label>
+            <mat-select formControlName="user_type">
+                <mat-option *ngFor="let type of type" value="{{type.id}}">{{type.description}}</mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <section>
+            <mat-slide-toggle formControlName="active">Active</mat-slide-toggle>
+        </section>
+
+
+        <section>
+            <div class="example-button-row">
+                <button mat-raised-button color="primary" type="submit">Save</button>
+            </div>
+        </section>
+    </form>
+</mat-card>

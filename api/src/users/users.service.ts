@@ -21,12 +21,12 @@ export class UsersService {
   }
 
   findAll() {
-    return this.usersRepository.find();
-    // return this.usersRepository.find({ relations: ['user_type'] });
+    // return this.usersRepository.find();
+    return this.usersRepository.find({ relations: ['user_type'] });
   }
 
   findOne(id: string) {
-    return this.usersRepository.findOne(id);
+    return this.usersRepository.findOne(id, { relations: ['user_type'] });
   }
 
   async update(id: string, updateUser: UserDTO) {

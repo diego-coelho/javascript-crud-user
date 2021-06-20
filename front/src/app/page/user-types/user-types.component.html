@@ -1,0 +1,60 @@
+<mat-card class="example-card">
+    <mat-card-header>
+        <mat-card-title>Types</mat-card-title>
+        <span class="example-spacer"></span>
+        <button mat-icon-button aria-label="bin current user" (click)="edit()">
+            <mat-icon>add_circle</mat-icon>
+        </button>
+    </mat-card-header>
+    <!-- <mat-card-content> -->
+        <table mat-table [dataSource]="userTypes" class="mat-elevation-z8">
+
+            <ng-container matColumnDef="active">
+                <th mat-header-cell *matHeaderCellDef> Status </th>
+                <td mat-cell *matCellDef="let element">
+                    <mat-icon *ngIf="element.active">check_circle</mat-icon>
+                    <mat-icon *ngIf="!element.active">remove_circle_outline</mat-icon>
+                </td>
+            </ng-container>
+
+
+            <ng-container matColumnDef="description">
+                <th mat-header-cell *matHeaderCellDef> Description </th>
+                <td mat-cell *matCellDef="let element"> {{element.description}} </td>
+            </ng-container>
+
+
+            <ng-container matColumnDef="created">
+                <th mat-header-cell *matHeaderCellDef> Created at </th>
+                <td mat-cell *matCellDef="let element"> {{element.createdAt | date: 'dd/MM/yyyy HH:mm'}} </td>
+            </ng-container>
+
+
+
+            <ng-container matColumnDef="last update">
+                <th mat-header-cell *matHeaderCellDef> Last update </th>
+                <td mat-cell *matCellDef="let element"> {{element.updatedAt | date: 'dd/MM/yyyy HH:mm'}} </td>
+            </ng-container>
+
+
+            <ng-container matColumnDef="options">
+                <th mat-header-cell *matHeaderCellDef> Options </th>
+                <td mat-cell *matCellDef="let element">
+
+                    <button mat-icon-button aria-label="Edit current user" (click)="edit(element.id)">
+                        <mat-icon>edit</mat-icon>
+                    </button>
+
+                    <button mat-icon-button aria-label="bin current user" (click)="delete(element.id)">
+                        <mat-icon>delete</mat-icon>
+                    </button>
+
+                </td>
+            </ng-container>
+
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+    <!-- </mat-card-content> -->
+</mat-card>

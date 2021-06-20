@@ -8,5 +8,8 @@
     "entities": [
         "dist/**/entities/*.entity.js"
     ],
+    "migrations": [
+        "./migrations/*.js"
+    ],
     "synchronize": true
 }

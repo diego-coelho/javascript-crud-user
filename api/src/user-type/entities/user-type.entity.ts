@@ -1,6 +1,6 @@
 import { IsNotEmpty } from "class-validator";
 import { User } from "src/users/entities/user.entity";
-import { BeforeUpdate, Column, CreateDateColumn, Entity, JoinColumn, OneToMany, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
+import { BeforeUpdate, Column, CreateDateColumn, Entity, JoinColumn, OneToMany, PrimaryColumn, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
 
 @Entity()
 export class UserType {
@@ -17,11 +17,9 @@ export class UserType {
     active: boolean;    // required
 
     @UpdateDateColumn()
-    // @IsNotEmpty()
     updatedAt: Date;    // required
 
     @CreateDateColumn()
-    // @IsNotEmpty()
     createdAt: Date;    // required
 
     @OneToMany(() => User, user => user.user_type)

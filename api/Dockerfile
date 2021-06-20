@@ -10,7 +10,9 @@ RUN npm install --only=development
 
 COPY . .
 
-RUN npm run build
+RUN npm run build dev
+
+# RUN npm run typeorm schema:sync
 
 FROM node:12.19.0-alpine3.9 as production
 
